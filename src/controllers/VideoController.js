@@ -14,7 +14,7 @@ module.exports = {
         // console.log(intensidade)
         const title = req.params.title
         // console.log(title)
-        const path = '../backend/tmp/'+title+'.mp4'
+        const path = '../../tmp/'+title+'.mp4'
         const stat = fs.statSync(path)
         const fileSize = stat.size
         const range = req.headers.range

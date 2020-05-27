@@ -43,6 +43,7 @@ routes.post('/aulas', AulaController.create);
 routes.delete('/aulas/:id', celebrate({
     [Segments.PARAMS]: Joi.object().keys({
         id: Joi.number().required(),
+
     })
 }), AulaController.delete);
 
@@ -56,7 +57,7 @@ routes.get('/profile', celebrate({
 routes.get('/video/:title', function(req, res) {
     
     title = req.params.title
-    const path = '../backend/tmp/'+title+'.mp4'
+    const path = './tmp/'+title+'.mp4'
     const stat = fs.statSync(path)
     const fileSize = stat.size
     const range = req.headers.range
